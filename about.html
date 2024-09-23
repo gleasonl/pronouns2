@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Our Inclusive Language Project</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Import Google Fonts (if not already included in style.css) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Pronoun or Name Selection Popup -->
+    <!-- Include the same popup code from index.html if necessary -->
+    <div class="popup" id="pronoun-popup">
+<!-- Pronoun or Name Selection Popup -->
+<div class="popup" id="pronoun-popup">
+    <div class="popup-content">
+        <h2>Select How You Want to Be Addressed</h2>
+        <!-- Predefined Pronoun Buttons -->
+        <button class="pronoun-btn" onclick="selectPronouns('he', 'him', 'his', 'his', 'singular')">He/Him</button>
+        <button class="pronoun-btn" onclick="selectPronouns('she', 'her', 'her', 'hers', 'singular')">She/Her</button>
+        <button class="pronoun-btn" onclick="selectPronouns('they', 'them', 'their', 'theirs', 'plural')">They/Them</button>
+        <!-- Custom Pronouns Input -->
+        <p>Or enter your custom pronouns:</p>
+        <label for="custom-subject">Subject (e.g., xe)</label>
+        <input type="text" id="custom-subject" placeholder="Subject" onfocus="clearOtherSelections('custom')">
+        <label for="custom-object">Object (e.g., xem)</label>
+        <input type="text" id="custom-object" placeholder="Object">
+        <label for="custom-possessive">Possessive Adjective (e.g., xyr)</label>
+        <input type="text" id="custom-possessive" placeholder="Possessive Adjective">
+        <label for="custom-possessive-pronoun">Possessive Pronoun (e.g., xyrs)</label>
+        <input type="text" id="custom-possessive-pronoun" placeholder="Possessive Pronoun">
+        <label for="custom-number">Is your pronoun singular or plural?</label>
+        <select id="custom-number">
+            <option value="singular">Singular</option>
+            <option value="plural">Plural</option>
+        </select>
+        <!-- Name Input -->
+        <p>Or enter your name:</p>
+        <label for="name-input">Your Name</label>
+        <input type="text" id="name-input" placeholder="Your name" onfocus="clearOtherSelections('name')">
+        <!-- Don't Ask Again Checkbox -->
+        <div class="checkbox-container">
+            <input type="checkbox" id="dont-ask-again">
+            <label for="dont-ask-again">Don't ask me again</label>
+        </div>
+        <!-- Submit Button -->
+        <button class="submit-btn" onclick="submitSelection()">Submit</button>
+        <!-- Link to Pronoun Importance -->
+        <a href="https://www.glsen.org/activity/pronouns-guide-glsen" target="_blank">Why are pronouns important?</a>
+    </div>
+</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <h1>About Our Inclusive Language Project</h1>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content">
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>
+                We believe that language has the power to shape experiences and foster inclusion. Our mission is to create digital spaces where everyone feels respected, valued, and seen.
+            </p>
+        </section>
+
+        <section class="project-description">
+            <h2>What We Do</h2>
+            <p>
+                This demo showcases how digital platforms can adapt to individual language preferences, creating a more inclusive online experience. By allowing users to specify <span class="pronoun-possessive">their</span> preferred pronouns or name, we demonstrate the technical feasibility and positive impact of personalized, respectful communication.
+            </p>
+        </section>
+
+        <section class="impact">
+            <h2>Why It Matters</h2>
+            <p>
+                Inclusive language is more than just words—it's about recognition, respect, and creating a sense of belonging. When <span class="pronoun-subject">they</span> feel seen and valued, it enhances <span class="pronoun-possessive">their</span> overall experience and encourages <span class="pronoun-object">them</span> to engage more fully.
+            </p>
+        </section>
+
+        <section class="future">
+            <h2>Looking Ahead</h2>
+            <p>
+                We envision a future where inclusive language is the norm across all digital platforms. This project is a step towards that future, showcasing how technology can be leveraged to create more welcoming online spaces for everyone.
+            </p>
+        </section>
+
+        <!-- Navigation Links -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+
+        <!-- Reset Button -->
+        <button onclick="resetPronouns()" class="reset-button">Reset Pronouns/Name</button>
+    </div>
+
+    <!-- Include the script.js file -->
+    <script src="script.js"></script>
+</body>
+</html>

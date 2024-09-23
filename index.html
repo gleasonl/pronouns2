@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pronoun or Name Selection Demo</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Import Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Pronoun or Name Selection Popup -->
+    <div class="popup" id="pronoun-popup">
+        <div class="popup-content">
+            <h2>Select How You Want to Be Addressed</h2>
+            <!-- Predefined Pronoun Buttons -->
+            <button class="pronoun-btn" onclick="selectPronouns('he', 'him', 'his', 'his', 'singular')">He/Him</button>
+            <button class="pronoun-btn" onclick="selectPronouns('she', 'her', 'her', 'hers', 'singular')">She/Her</button>
+            <button class="pronoun-btn" onclick="selectPronouns('they', 'them', 'their', 'theirs', 'plural')">They/Them</button>
+            <!-- Custom Pronouns Input -->
+            <p>Or enter your custom pronouns:</p>
+            <label for="custom-subject">Subject (e.g., xe)</label>
+            <input type="text" id="custom-subject" placeholder="Subject" onfocus="clearOtherSelections('custom')">
+            <label for="custom-object">Object (e.g., xem)</label>
+            <input type="text" id="custom-object" placeholder="Object">
+            <label for="custom-possessive">Possessive Adjective (e.g., xyr)</label>
+            <input type="text" id="custom-possessive" placeholder="Possessive Adjective">
+            <label for="custom-possessive-pronoun">Possessive Pronoun (e.g., xyrs)</label>
+            <input type="text" id="custom-possessive-pronoun" placeholder="Possessive Pronoun">
+            <label for="custom-number">Is your pronoun singular or plural?</label>
+            <select id="custom-number">
+                <option value="singular">Singular</option>
+                <option value="plural">Plural</option>
+            </select>
+            <!-- Name Input -->
+            <p>Or enter your name:</p>
+            <label for="name-input">Your Name</label>
+            <input type="text" id="name-input" placeholder="Your name" onfocus="clearOtherSelections('name')">
+            <!-- Don't Ask Again Checkbox -->
+            <div class="checkbox-container">
+                <input type="checkbox" id="dont-ask-again">
+                <label for="dont-ask-again">Don't ask me again</label>
+            </div>
+            <!-- Submit Button -->
+            <button class="submit-btn" onclick="submitSelection()">Submit</button>
+            <!-- Link to Pronoun Importance -->
+            <a href="https://www.glsen.org/activity/pronouns-guide-glsen" target="_blank">Why are pronouns important?</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <h1 id="greeting">Welcome to Our Inclusive Demo Site!</h1>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Introduction -->
+        <section>
+            <p>Hello there! We're excited to show you how our site adapts to your preferences. Let's personalize your experience together!</p>
+        </section>
+
+        <!-- How It Works -->
+        <section>
+            <h2>How It Works</h2>
+            <ol>
+                <li><strong>Choose Your Pronouns</strong>: Select from options like "she/her," "he/him," "they/them," or enter custom pronouns.</li>
+                <li><strong>Use Your Name</strong>: Prefer to see your name instead? Perfect for those who don't use pronouns or simply prefer name-based personalization.</li>
+            </ol>
+            <p>Watch as the text below changes to reflect your choice!</p>
+        </section>
+
+        <!-- Our Pronoun Options -->
+        <section>
+            <h2>Our Pronoun Options</h2>
+            <p>We offer a variety of pronoun choices to ensure everyone feels represented:</p>
+            <ul>
+                <li>She/Her/Hers</li>
+                <li>He/Him/His</li>
+                <li>They/Them/Theirs</li>
+                <li>It/Its</li>
+                <li>Ze/Zir/Zirs</li>
+                <li>Custom pronouns of your choice</li>
+                <li>No pronouns (name only)</li>
+            </ul>
+        </section>
+
+        <!-- See It in Action -->
+        <section>
+            <h2>See It in Action</h2>
+            <p>
+                <span class="pronoun-subject start-of-sentence">They</span> are exploring our demo site today. As <span class="pronoun-subject">they</span> navigate through the pages, <span class="pronoun-subject">they</span> will notice how the content adapts to <span class="pronoun-possessive">their</span> selection. It's amazing how <span class="pronoun-subject">they</span> <span class="verb" data-verb="experience">experience</span> the site differently based on <span class="pronoun-possessive">their</span> choice!
+            </p>
+            <p>
+                <span class="pronoun-subject start-of-sentence">They</span> <span class="verb" data-verb="have">have</span> the power to customize <span class="pronoun-possessive">their</span> journey. When <span class="pronoun-subject">they</span> <span class="verb" data-verb="visit">visit</span> different sections, <span class="pronoun-subject">they</span> will see that the pronouns and verbs change to match <span class="pronoun-possessive">their</span> preference. <span class="pronoun-subject start-of-sentence">They</span> <span class="pronoun-verb">are</span> in control of how the site addresses <span class="pronoun-object">them</span>.
+            </p>
+            <p>
+                We believe this feature <span class="verb" data-verb="make">makes</span> <span class="pronoun-possessive">their</span> time here more enjoyable. <span class="pronoun-subject start-of-sentence">They</span> can freely express <span class="pronoun-reflexive">themselves</span> without worry. The site is <span class="pronoun-possessive-pronoun">theirs</span> to explore, and we hope it feels welcoming to <span class="pronoun-object">them</span>.
+            </p>
+        </section>
+
+        <!-- Key Features -->
+        <section>
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Session-wide Changes</strong>: Your pronoun or name choice applies across all pages during your session.</li>
+                <li><strong>"Don't Ask Again" Option</strong>: If selected, we'll remember your preference for future visits.</li>
+                <li><strong>Reset Button</strong>: Change your choice anytime to test different pronouns or update your preference.</li>
+                <li><strong>Diverse Options</strong>: We recognize the fluidity and flexibility of gender identity.</li>
+                <li><strong>Name-Only Option</strong>: Use your name instead of pronouns if you prefer.</li>
+            </ul>
+        </section>
+
+        <!-- Our Commitment to You -->
+        <section>
+            <h2>Our Commitment to You</h2>
+            <p>
+                At our core, we strive to create a welcoming space for everyone. Whether <span class="pronoun-subject">they</span> <span class="verb" data-verb="prefer">prefer</span> "they," "he," "she," another pronoun, or no pronouns at all, we want <span class="pronoun-object">them</span> to feel acknowledged and respected.
+            </p>
+            <p>
+                <span class="pronoun-possessive start-of-sentence">Their</span> identity is unique, and so is <span class="pronoun-possessive">their</span> experience here. We hope <span class="pronoun-subject">they</span> <span class="verb" data-verb="enjoy">enjoy</span> exploring how language can adapt to reflect the beautiful diversity of our community.
+            </p>
+        </section>
+
+        <!-- Why We Offer This Feature -->
+        <section>
+            <h2>Why We Offer This Feature</h2>
+            <p>
+                We understand that gender identity can be fluid and may change over time. That's why we've included a reset button, allowing you to change your pronoun or name choice at any time. This feature is perfect for:
+            </p>
+            <ul>
+                <li>Exploring different pronouns to see what feels right</li>
+                <li>Correcting any mistakes in your initial selection</li>
+                <li>Accommodating multiple users on the same device</li>
+                <li>Reaffirming your gender identity as it may evolve</li>
+            </ul>
+            <p>
+                Remember, your choice here doesn't define you – it's simply a tool to make your experience more comfortable. Feel free to experiment and find what works best for you!
+            </p>
+            <p>
+                Thank you for being here. <span class="pronoun-possessive start-of-sentence">Their</span> presence <span class="verb" data-verb="make">makes</span> our site more vibrant and inclusive!
+            </p>
+        </section>
+
+        <!-- Navigation Links -->
+        <nav>
+            <a href="about.html">About Us</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+    </div>
+
+    <!-- Reset Button -->
+    <button class="reset-button" onclick="resetPronouns()">Reset Pronouns/Name</button>
+
+    <!-- Include the script.js file -->
+    <script src="script.js"></script>
+</body>
+</html>

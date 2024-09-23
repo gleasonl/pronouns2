@@ -1,0 +1,265 @@
+/* style.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Color Variables for Easy Reference */
+:root {
+    --deep-navy: #073847;
+    --muted-gold: #e8b973;
+    --soft-coral: #e97f61;
+    --muted-turquoise: #41b3a3;
+    --light-cream: #f4f0e0;
+}
+
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-cream);
+    color: var(--deep-navy);
+    line-height: 1.6;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    color: var(--deep-navy);
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-top: 40px;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Links */
+a {
+    color: var(--muted-turquoise);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--soft-coral);
+}
+
+/* Buttons */
+button, .cta-button {
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Pronoun Buttons */
+.pronoun-btn {
+    background-color: var(--muted-gold);
+    color: var(--deep-navy);
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.pronoun-btn:hover {
+    background-color: var(--soft-coral);
+    color: var(--light-cream);
+}
+
+.pronoun-btn.selected {
+    background-color: var(--muted-turquoise);
+    color: var(--light-cream);
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: var(--muted-gold);
+    color: var(--deep-navy);
+    width: 100%;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: var(--soft-coral);
+    color: var(--light-cream);
+}
+
+.cta-button {
+    background-color: var(--muted-gold);
+    color: var(--deep-navy);
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background-color: var(--soft-coral);
+    color: var(--light-cream);
+}
+
+.reset-button {
+    background-color: var(--muted-turquoise);
+    color: var(--light-cream);
+    margin: 30px auto;
+    display: block;
+}
+
+.reset-button:hover {
+    background-color: var(--soft-coral);
+}
+
+/* Sections */
+section {
+    margin-bottom: 40px;
+}
+
+/* Lists */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+    margin-top: 40px;
+}
+
+nav a {
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+/* Features Section */
+.features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.features li {
+    padding-left: 30px;
+    position: relative;
+}
+
+.features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--muted-turquoise);
+}
+
+/* Pop-up Styles */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 56, 71, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    background-color: var(--light-cream);
+    padding: 20px; /* Reduced padding */
+    border-radius: 8px;
+    max-width: 450px; /* Reduced max-width */
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-size: 14px; /* Reduced font size */
+}
+
+.popup-content h2 {
+    margin-top: 0;
+    font-size: 1.6em; /* Adjusted font size */
+}
+
+/* Input Fields */
+.popup-content input[type="text"],
+.popup-content select {
+    width: 100%;
+    padding: 8px; /* Reduced padding */
+    margin-bottom: 10px; /* Reduced margin */
+    border: 1px solid var(--deep-navy);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.popup-content label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Align Checkbox and Label */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; /* Reduced margin */
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.popup-content a {
+    display: inline-block;
+    margin-top: 10px; /* Reduced margin */
+    color: var(--muted-turquoise);
+    font-size: 14px;
+}
+
+.popup-content a:hover {
+    color: var(--soft-coral);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .content {
+        padding: 15px;
+    }
+}
